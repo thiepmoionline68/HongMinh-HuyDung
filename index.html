@@ -606,7 +606,7 @@
                                         2026 </span>
                                 </div>
 
-                                <p class="invi_amlich">Tức ngày 11 tháng 2 năm Bính Ngọ (Âm Lịch)</p>
+                                <p class="invi_amlich">Tức ngày 11 tháng 2 năm Bính Ngọ</p>
                             </div>
 
                         </div>
@@ -649,7 +649,7 @@ Số 7-9 Nguyễn Văn Linh, Long Biên, Hà Nội</p>
                                         2026 </span>
                                 </div>
 
-                                <p class="invi_amlich">Tức ngày 10 tháng 2 năm Bính Ngọ (Âm Lịch)</p>
+                                <p class="invi_amlich">Tức ngày 10 tháng 2 năm Bính Ngọ</p>
                             </div>
 
                         </div>
@@ -873,6 +873,9 @@ Số 7-9 Nguyễn Văn Linh, Long Biên, Hà Nội</p>
                             <label for="" style="color:white">
                                 Bạn là khách nhà trai hay nhà gái </label>
                                 <input style="border:1px solid white" type="text" id="accept" class="input blur-bg" required="">
+                                <label for="" style="color:white">
+                                Số lượng người tham dự </label>
+                                <input style="border:1px solid white" type="text" id="numperson" class="input blur-bg" required="">
                     </div>
                     <button type="submit" class="btn btn-primary send_message uk-margin-top" style="color:white">Gửi
                         lời chúc</button>
@@ -886,7 +889,8 @@ Số 7-9 Nguyễn Văn Linh, Long Biên, Hà Nội</p>
                     event.preventDefault();
                     let name = document.getElementById("ten").value;
                     let message = document.getElementById("messages").value;
-                    let accept = document.getElementById("accept").value;         
+                    let accept = document.getElementById("accept").value;  
+                     let numPer = document.getElementById("numperson").value;        
                     // Thay thế bằng URL Google Form của bạn
                     let googleFormURL = "https://docs.google.com/forms/u/0/d/e/1FAIpQLSeHmW755YYTDZ_Van1OnhkiaTaspZMU44fI4ehGb_OlFu6Ilg/formResponse";
                     // Các entry ID (tìm trong Google Form)
@@ -894,6 +898,7 @@ Số 7-9 Nguyễn Văn Linh, Long Biên, Hà Nội</p>
                     formData.append("entry.945135880", name); 
                     formData.append("entry.1925638016", message); 
                     formData.append("entry.1065408352", accept);
+                    formData.append("entry.1903841075", numPer);
         
                     fetch(googleFormURL, {
                         method: "POST",
